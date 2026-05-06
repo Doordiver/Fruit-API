@@ -6,6 +6,6 @@ router.get('/', fruits.index)
 router.get('/:name', fruits.find)
 router.post('/', fruits.create)
 router.patch('/:name', fruits.update)
-router.delete('./:name', fruits.deleteFruit)
+router.delete('/:name', fruits.deleteFruit)
 
 module.exports = router
