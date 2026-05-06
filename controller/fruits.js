@@ -27,4 +27,17 @@ const find = async (req, res) => {
     }
 }
 
-module.exports = { index, find }
+const create = async (req, res) => {
+
+    try {
+        const newFruit = await Fruit.create(req.body)
+        res.status(200).send(newFruit)
+    }
+
+    catch {
+        res.status(409).send( {error: err})
+    }
+
+}
+
+module.exports = { index, find, create}
