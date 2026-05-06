@@ -34,8 +34,8 @@ const create = async (req, res) => {
         res.status(200).send(newFruit)
     }
 
-    catch {
-        res.status(409).send( {error: err})
+    catch (err) {
+        res.status(409).send({ error: err})
     }
 
 }
