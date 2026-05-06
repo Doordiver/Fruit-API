@@ -75,15 +75,16 @@ class Fruit {
         }
     }
 
-    delete(name) {
-        const deleteFruitIndex = fruits.indexOf((fruit) => fruit.name.toLowerCase() === this.name.toLowerCase())
+    delete() {
+        const deletedFruit = fruits.find((fruit) => fruit.name.toLowerCase() === this.name.toLowerCase())
 
-        if (deleteFruitIndex) {
-            fruits.splice(deleteFruitIndex)
+        if (deletedFruit) {
+            const index = fruits.indexOf(deletedFruit)
+            fruits.splice(index, 1)
         }
 
         else {
-            throw "Fruits does not exist"
+            throw "Fruit not found"
         }
     }
 
