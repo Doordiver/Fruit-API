@@ -1,0 +1,45 @@
+const fruits = require("../fruits.json")
+
+class Fruit {
+
+    constructor(fruit) {
+        this.genus = fruit.genus
+        this.name = fruit.name
+        this.id = fruit.id
+        this.family = fruit.family
+        this.order = fruit.order
+        this.nutritions = fruit.nutritions
+    }
+
+    static showAll() {
+        //create a loop
+        //for each fruit in json file
+        //create a fruit object
+        //create of collections of fruit objects
+        //return the collection
+        return fruits.map(f => new Fruit(f))
+    }
+
+    static showName(name) {
+        //create a loop
+        //for each fruit in json file
+        //check if fruit name = input name
+        //add that fruits to object
+        //return the object
+        const fruit = fruits.find((fruit) => fruit.name.toLowerCase() == name)
+        // return fruits.map(f => {
+        //     if (Fruit(f).name == name) {
+        //         return new Fruit(f)
+        //     }
+        // })
+        if (fruit) {
+            return new Fruit(fruit)
+        }
+
+        else {
+            throw "The fruit doesn't exist"
+        }
+    }
+}
+
+module.exports = Fruit
