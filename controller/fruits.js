@@ -55,4 +55,18 @@ const update = async (req, res) => {
 
 }
 
-module.exports = { index, find, create, update}
+const deleteFruit = async (req, res) => {
+    const name = req.params.name.toLowerCase()
+
+    try {
+        const fruit = await Fruit.showName(name)
+        fruit.delete(name)
+        res.status(204).send("Fruit Deleted")
+    }
+
+    catch (err) {
+        res.status(404).send({ error: err})
+    }
+}
+
+module.exports = { index, find, create, update, deleteFruit}
