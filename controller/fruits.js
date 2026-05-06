@@ -44,7 +44,7 @@ const update = async (req, res) => {
     const name = req.params.name.toLowerCase()
 
     try {
-        const fruit = await Fruit.find(name)
+        const fruit = await Fruit.showName(name)
         const result = await fruit.update(req.body)
         res.status(200).send(result)
     }
