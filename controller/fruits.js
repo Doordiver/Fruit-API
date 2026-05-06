@@ -31,7 +31,7 @@ const create = async (req, res) => {
 
     try {
         const newFruit = await Fruit.create(req.body)
-        res.status(200).send(newFruit)
+        res.status(201).send(newFruit)
     }
 
     catch (err) {
