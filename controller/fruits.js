@@ -60,8 +60,9 @@ const deleteFruit = async (req, res) => {
 
     try {
         const fruit = await Fruit.showName(name)
-        fruit.delete(name)
-        res.status(204).send("Fruit Deleted")
+        const result = await fruit.delete()
+
+        res.sendStatus(204)
     }
 
     catch (err) {
