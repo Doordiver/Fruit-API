@@ -69,9 +69,21 @@ class Fruit {
             updatedFruit.family = data.family
             return new Fruit(updatedFruit)
         } 
-        
+
         else {
             throw "Fruit not found"
+        }
+    }
+
+    delete(name) {
+        const deleteFruitIndex = fruits.indexOf((fruit) => fruit.name.toLowerCase() === this.name.toLowerCase())
+
+        if (deleteFruitIndex) {
+            fruits.splice(deleteFruitIndex)
+        }
+
+        else {
+            throw "Fruits does not exist"
         }
     }
 
