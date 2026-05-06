@@ -9,6 +9,4 @@ app.get('/',(req, res) => {
 
 app.use('/fruits', fruits) //https://localhost:3000/fruits
 
-app.use('/:name', fruits)
-
 module.exports = app
