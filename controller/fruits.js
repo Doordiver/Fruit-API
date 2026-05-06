@@ -55,4 +55,4 @@ const update = async (req, res) => {
 
 }
 
-module.exports = { index, find, create}
+module.exports = { index, find, create, update}
