@@ -7,7 +7,7 @@ app.get('/',(req, res) => {
     res.send("Hello from the fruits api")
 })
 
-app.use(express.json)
+app.use(express.json())
 app.use('/fruits', fruits) //https://localhost:3000/fruits
 
 module.exports = app
