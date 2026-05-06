@@ -55,11 +55,26 @@ class Fruit {
         else {
             newFruit["id"] = fruits.length + 1
             fruits.push(newFruit)
-            
+
             return new Fruit(newFruit)
         }
 
     }
+
+    update(data) {
+        const updatedFruit = fruits.find((fruit) => fruit.name.toLowerCase() === this.name.toLowerCase())
+
+        if (updatedFruit) {
+            updatedFruit.name = data.name
+            updatedFruit.family = data.family
+            return new Fruit(updatedFruit)
+        } 
+        
+        else {
+            throw "Fruit not found"
+        }
+    }
+
 }
 
 module.exports = Fruit
